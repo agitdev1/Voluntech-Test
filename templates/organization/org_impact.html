@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact</title>
+    <link rel="stylesheet" href="/static/css/impact.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- logo -->
+        <div class="navbar-logo">
+            <a href="/organization">
+                <img src="/static/logo.png" alt="Voluntech"/>
+            </a>
+        <!-- menu items -->
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="/create-opportunity/">Post a project</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="/organization/"> Home </a>
+                </li>
+            </ul>
+            <ul style="margin-left: auto;">
+                <li>
+                    <a href=/organization/impact>Impact</a>
+                </li>
+                <li>
+                    <a href="/profile">Profile</a>
+                </li>
+                <li>
+                    <a href="/" id="logout" onclick="logout();">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="impact-container">
+        <h1>Our Impact</h1>
+        <div class="impact-stat">
+            <h2>Total Volunteer Hours</h2>
+            <p>{{ total_hours }}</p>
+        </div>
+        <div class="impact-stat">
+            <h2>Projects Completed</h2>
+            <p>{{ projects_completed }}</p>
+        </div>
+        <div class="impact-stat">
+            <h2>Community Benefits</h2>
+            <p>{{ community_benefits }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+ body {
+            font-family: Arial, Helvetica, sans-serif, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .menu {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .impact-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .impact-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .impact-stat {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fafafa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .impact-stat h2 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .impact-stat p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #232323;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content:baseline;
+            align-items: center;
+            border:none;
+            margin: 0;
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            color: #00C6A7;
+        }
+        .navbar-logo {
+            flex: 1; /* Distribute remaining space equally */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+        .navbar-logo img {
+            max-height: 100px; 
+            max-width:150px; 
+            flex-shrink: 0;
+        }
+        

@@ -1,0 +1,524 @@
+/* General Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.testimonial {
+    font-style: italic;
+    color: #666;
+    background: #f0f0f0;
+    padding: 15px;
+    border-left: 4px solid #007bff;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.menu-container {
+position: relative;
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+background: #232323;
+color: #cdcdcd;
+padding: 30px; /* Increased padding */
+z-index: 1;
+-webkit-user-select: none;
+user-select: none;
+box-sizing: border-box;
+ }
+
+
+
+.menu-container a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+    font-size:30px; /*font size in navbar*/
+
+}
+
+.menu-container a:hover {
+    color: #00C6A7;
+}
+
+.menu-container input {
+    display: block;
+    width: 35px;
+    height: 25px;
+    margin: 0;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+.menu-container span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+}
+
+.menu-container span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.menu-container span:nth-child(3) {
+    transform-origin: 0% 100%;
+}
+
+.menu-container input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(3px,-1px);
+    background: #232323;
+}
+
+.menu-container input:checked ~ span:nth-child(4) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menu-container input:checked ~ span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px,11px);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.menu li {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.user-profile {
+    padding: 0 20px;
+    font-size: 18px;
+    color: white;
+}
+
+@media only screen and (max-width: 767px) { 
+    .menu-container {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+
+.menu {
+        position: absolute;
+        box-sizing: border-box;
+        width: 300px;
+        right: -300px;
+        top: 0;
+        margin: -20px;
+        padding: 75px 50px 50px;
+        background: #cdcdcd;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translateX(0%);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    .menu-container input:checked ~ .menu {
+        transform: translateX(-100%);
+    }
+}
+
+@media only screen and (min-width: 768px) { 
+    .menu-container {
+        width: 100%;
+    }
+
+    .menu-container a {
+        color: #cdcdcd;
+    }
+
+    .menu-container input {
+        display: none;
+    }
+
+    .menu-container span {
+        display: none;
+    }
+
+    .menu {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu li {
+        padding: 0 20px;
+    }
+    .menu-logo img {
+        max-height: 100px; 
+        max-width:150px; 
+        flex-shrink: 0;
+    }
+}
+.navbar {
+    width: 100%;
+    background-color: #232323;
+    color: #cdcdcd;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #cdcdcd;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00C6A7;
+}
+
+.navbar-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-logo img {
+    max-height: 100px;
+    max-width: 150px;
+    flex-shrink: 0;
+}
+
+.form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+input.form-input {  /* Added input.form-input to apply styles */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+/* SKILLS MODAL CSS */
+#skills {
+    cursor: pointer; /* Change cursor to pointer */
+    background-color: #fff; /* Set initial background color */
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+    }
+   
+   /* size of labels inside the modal*/
+   label {
+       font-size: 15px;
+       margin-bottom: 5px;
+      }
+   #skills:hover {
+    background-color: #e6f2ff; /* Light blue hover background color */
+   }
+   
+   #skills:focus {
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); 
+   }
+   
+   .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    transform: translate(0, 0); 
+    transition: transform 0.3s ease-out; /* Smooth transition for any transform changes */
+   } 
+   
+   .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 50%; 
+    max-width: 800px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: modalSlideIn 0.3s ease-out;
+   }
+   .modal-content p {
+       margin-bottom: 20px;
+       text-align: center;
+       
+   }
+   .close {
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: color 0.3s ease;
+   }
+   
+   .close:hover {
+    color: #666;
+   }
+   
+   .modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+   
+   }
+   
+   #skillOptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+   }
+   
+   #skillOptions label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   }
+   
+   #skillOptions label:hover {
+    background-color: #eee;
+   }
+   
+   #skillOptions input[type="checkbox"] {
+    margin-right: 10px;
+   }
+   
+   #saveSkills {
+    width: 100%;
+    padding: 14px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+   }
+   
+   #saveSkills:hover {
+    background-color: #003e80;
+   }
+   
+   /* Modal Animation */
+   @keyframes modalSlideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+   }
+   
+   /* CAUSES MODAL */
+   .causes-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.causes-modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.causes-modal .close {
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.causes-modal .close:hover {
+    color: #666;
+}
+
+.causes-modal-content h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #444;
+    font-weight: 500;
+}
+
+#causeOptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+    
+}
+
+#causeOptions label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align:start;
+}
+
+#causeOptions label:hover {
+    background-color: #eee;
+}
+
+#cause {
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#cause:hover {
+    background-color: #e6f2ff;
+}
+
+#cause:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+#causeOptions input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#saveCauses {
+    width: 100%;
+    padding: 14px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#saveCauses:hover {
+    background-color: #003e80;
+}
+
+/* Modal Animation */
+@keyframes modalSlideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

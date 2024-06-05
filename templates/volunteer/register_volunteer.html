@@ -1,0 +1,184 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+        <title>Volunteer Registration</title>
+        <link rel="stylesheet" href="/static/css/register.css">
+
+    <!-- Import Lato font from Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    </head>
+    <body>
+            <!-- Navigation bar -->
+<div class="navbar">
+    <!-- logo -->
+    <div class="navbar-logo">
+        <a href="/" class="navbar-logo">
+            <img src="/static/logo.png" alt="Voluntech">
+        </a>
+    </div>
+</div>
+        <div class="container">
+            <h1> Volunteer Registration Form</h1>
+
+            <br>
+            <form id="volunteerForm" method="post">
+                <div> 
+                    <input type="text" id="first_name" name="first_name" required placeholder = "First Name">
+                </div>
+                <div>
+                    <input type="text" id="last_name" name="last_name" required placeholder="Last Name">
+                </div>
+                <div>
+                    <select id="age" name="age" required>
+                        <option value="" disabled selected>Select your age range</option>
+                        <option value="under_18">Under 18 years old</option>
+                        <option value="18_to_24">18 to 24</option>
+                        <option value="25_to_34">25 to 34</option>
+                        <option value="35_to_44">35 to 44</option>
+                        <option value="45_to_54">45 to 54</option>
+                        <option value="55_to_64">55 to 64</option>
+                        <option value="65_plus">65+ years old</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select your Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="none">Prefer not to answer</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" required placeholder="Email">
+                </div>
+                <div>
+                    <input type="password" autocomplete="off" id="password" name="password" required placeholder="Password">
+                    <input type="checkbox" id="peek" onclick="Showpass()">Show Password
+                    <div>
+                        <br>
+                    <input type="text" id="city" name="city" required placeholder="City">
+                </div>
+
+                <div>
+                    <input type="text" autocomplete="off" id="skills" name="skills" placeholder="Skill areas that you would be volunteering..." required oninvalid="this.setCustomValidity('Please select an item in the list')"readonly
+                </div>
+                <div>
+                        <input type="text" autocomplete="off" id="cause" name="cause" placeholder="Cause areas you're interested in..." required oninvalid="this.setCustomValidity('Please select an item in the list')"readonly>
+                    </div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <!-- SKILLS MODAL-->
+        <div id="skillModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 >Select Skills (Maximum of 5) </h2>
+                <table id="skillOptions">
+                    <tr>
+                    <td><label><input type="checkbox" value="Accounting"> Accounting</label></td>
+                    <td><label><input type="checkbox" value="Artificial Intelligence"> Artificial Intelligence</label></td>
+                    <td><label><input type="checkbox" value="Branding"> Branding</label></td>
+                    <td><label><input type="checkbox" value="Business Development"> Business Development</label></td>
+                    </tr>
+                    <tr>
+                    <td><label><input type="checkbox" value="Communications"> Communications</label></td>
+                    <td><label><input type="checkbox" value="Data Analysis"> Data Analysis</label></td>
+                    <td><label><input type="checkbox" value="Digital Advertising"> Digital Advertising</label></td>
+                    <td><label><input type="checkbox" value="Digital Marketing"> Digital Marketing</label></td>
+                    </tr>
+                    <tr>
+                    <td><label><input type="checkbox" value="Engineering"> Engineering</label></td>
+                    <td><label><input type="checkbox" value="Entrepreneurship"> Entrepreneurship</label></td>
+                    <td><label><input type="checkbox" value="Event Planning"> Event Planning</label></td>
+                    <td><label><input type="checkbox" value="Finance"> Finance</label></td>
+                    </tr>
+                    <tr>
+                    <td><label><input type="checkbox" value="Fundraising"> Fundraising</label></td>
+                    <td><label><input type="checkbox" value="Graphic Design"> Graphic Design</label></td>
+                    <td><label><input type="checkbox" value="Human Resources"> Human Resources</label></td>
+                    <td><label><input type="checkbox" value="Information Technology"> Information Technology</label></td>
+                    </tr>
+                    <tr>
+                    <td><label><input type="checkbox" value="Leadership"> Leadership</label></td>
+                    <td><label><input type="checkbox" value="Management"> Management</label></td>
+                    <td><label><input type="checkbox" value="Marketing"> Marketing</label></td>
+                    <td><label><input type="checkbox" value="Photography & Video"> Photography & Video</label></td>
+                    </tr>
+                    <tr>
+                    <td><label><input type="checkbox" value="Public Relations"> Public Relations</label></td>
+                    <td><label><input type="checkbox" value="Research"> Research</label></td>
+                    <td><label><input type="checkbox" value="Sales"> Sales</label></td>
+                    <td><label><input type="checkbox" value="Social Media"> Social Media</label></td>
+                    </tr>
+                    <tr>
+                    <td><label><input type="checkbox" value="Tutoring"> Tutoring</label></td>
+                    <td><label><input type="checkbox" value="Web Design"> Web Design</label></td>
+                    <td><label><input type="checkbox" value="Web Development"> Web Development</label></td>
+                    <td><label><input type="checkbox" value="Writing"> Writing</label></td>
+                    </tr>
+                </table>
+                <button id="saveSkills">Save</button>
+            </div>
+        </div> 
+        <!-- CAUSE MODAL-->
+        <div id="causesModal" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Choose Causes (Maximum of 5)</h2>
+            <table id="causeOptions">
+                <tr>
+                <td><label><input type="checkbox" value="Animals"> Animals</label></td>
+                <td><label><input type="checkbox" value="Community & economic development"> Community & Economic Development</label></td>
+                <td><label><input type="checkbox" value="Diversity & inclusion"> Diversity & Inclusion</label></td>
+                <td><label><input type="checkbox" value="Environment"> Environment</label></td>
+                </tr>
+                <tr>
+                <td><label><input type="checkbox" value="Housing & homelessness"> Housing & Homelessness</label></td>
+                <td><label><input type="checkbox" value="Justice & legal services"> Justice & Legal Services</label></td>
+                <td><label><input type="checkbox" value="Military & veterans affairs"> Military & Veterans Affairs</label></td>
+                <td><label><input type="checkbox" value="Science & technology"> Science & Technology</label></td>
+                </tr>
+                <tr>
+                <td><label><input type="checkbox" value="Arts & culture"> Arts & Culture</label></td>
+                <td><label><input type="checkbox" value="Disaster relief"> Disaster Relief</label></td>
+                <td><label><input type="checkbox" value="Education"> Education</label></td>
+                <td><label><input type="checkbox" value="Gender equity & justice"> Gender Equity & Justice</label></td>
+                </tr>
+                <tr>
+                <td><label><input type="checkbox" value="Human services"> Human Services</label></td>
+                <td><label><input type="checkbox" value="LGBTQ+"> LGBTQ+</label></td>
+                <td><label><input type="checkbox" value="Philanthropy & capacity building"> Philanthropy & Capacity Building</label></td>
+                <td><label><input type="checkbox" value="Violence prevention"> Violence Prevention</label></td>
+                </tr>
+                <tr>
+                <td><label><input type="checkbox" value="Civil rights"> Civil Rights</label></td>
+                <td><label><input type="checkbox" value="Disease & medical research"> Disease & Medical Research</label></td>
+                <td><label><input type="checkbox" value="Employment services"> Employment Services</label></td>
+                <td><label><input type="checkbox" value="Health & nutrition"> Health & Nutrition</label></td>
+                </tr>
+                <tr>
+                <td><label><input type="checkbox" value="International affairs"> International Affairs</label></td>
+                <td><label><input type="checkbox" value="Maternal health"> Maternal Health</label></td>
+                <td><label><input type="checkbox" value="Religion & spirituality"> Religion & Spirituality</label></td>
+                <td><label><input type="checkbox" value="Youth development"> Youth Development</label></td>
+                </tr>
+            </table>
+            <button id="saveCauses">Save</button>
+            
+            </div>
+        </div>
+        </div>
+    </body>
+    <script src="/static/js/volunteer/register.js"></script>
+
+    </html>
+    </html>

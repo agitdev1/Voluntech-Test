@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/static/css/profile.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <!-- logo -->
+        <div class="navbar-logo">
+            <a href="/organization">
+                <img src="/static/logo.png" alt="Voluntech"/>
+            </a>
+        </div>
+        <!-- menu items -->
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="/create-opportunity/">Post a project</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="/organization/"> Home </a>
+                </li>
+            </ul>
+            <ul style="margin-left: auto;">
+                <li>
+                    <a href=/organization/impact>Impact</a>
+                </li>
+                <li>
+                    <a href="/profile">Profile</a>
+                </li>
+                <li>
+                    <a href="/" id="logout" onclick="logout();">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>User Profile</h1>
+        </div>
+        <div class="profile-details">
+            <div class="profile-field">
+                <label>Email:</label>
+                <span>{{ user_data.email }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Name:</label>
+                <span>{{ user_data.organization_name }}</span>
+            </div>
+            <div class="profile-field">
+                <label>City:</label>
+                <span>{{ user_data.city }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Prioroties:</label>
+                <span>{{ user_data.priorities }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Causes:</label>
+                <span>{{ user_data.cause }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Organization Type:</label>
+                <span>{{ user_data.orgtype }}</span>
+            </div>
+            <button class="edit-btn" onclick="location.href='/edit-profile'">Edit Profile</button>
+        </div>
+    </div>
+</body>
+</html>

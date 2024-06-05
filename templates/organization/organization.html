@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Dashboard</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+
+</head>
+<body>
+    <!-- Navigation bar -->
+   <!-- Navigation bar -->
+   <nav class="navbar">
+    <!-- logo -->
+    <div class="navbar-logo">
+        <a href="/organization">
+            <img src="/static/logo.png" alt="Voluntech"/>
+        </a>
+    </div>
+    <!-- menu items -->
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="/create-opportunity/">Post a project</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="/organization/"> Home </a>
+            </li>
+        </ul>
+        <ul style="margin-left: auto;">
+            <li>
+                <a href=/organization/impact>Impact</a>
+            </li>
+            <li>
+                <a href="/profile">Profile</a>
+            </li>
+            <li>
+                <a href="/" id="logout" onclick="logout();">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <!-- About Us -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>Voluntech is dedicated to connecting skilled volunteers with non-profits in need of technical expertise. Our mission is to empower communities through technology.</p>
+</section>
+
+<!-- How to Get Involved -->
+<section id="get-involved">
+    <h2>Get Involved</h2>
+    <p>Join us to make a difference! Check out our <a href="/create-opportunity/">project postings</a> or <a href="/events/">upcoming events</a>.</p>
+</section>
+
+<!-- Success Stories -->
+<section id="success-stories">
+    <h2>Success Stories</h2>
+    <div class="testimonial">
+        <p>"Volunteering with Voluntech has been a rewarding experience, allowing me to use my skills for a good cause." - Jane Doe</p>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email us at <a href="mailto:contact@voluntech.org">contact@voluntech.org</a> or follow us on <a href="https://facebook.com/">Facebook</a>.</p>
+</section>
+</div>
+</body>
+<script src="/static/js//general/user.js"></script>
+
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+        </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <!-- logo -->
+        <div class="navbar-logo">
+            <a href="/volunteer">
+                <img src="/static/logo.png" alt="Voluntech"/>
+            </a>
+        </div>
+        <!-- menu items -->
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="/volunteer/">Volunteer</a>
+                </li>
+            </ul>
+            <ul style="margin-left: auto;">
+                <li>
+                    <a href="volunteer/impact">Impact</a>
+                </li>
+                <li>
+                    <a href="/profile">Profile</a>
+                </li>
+                <li>
+                    <a href="/" id="logout" onclick="logout();">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>User Profile</h1>
+        </div>
+        <div class="profile-details">
+            <div class="profile-field">
+                <label>Email:</label>
+                <span>{{ user_data.email }}</span>
+            </div>
+            <div class="profile-field">
+                <label>First name:</label>
+                <span>{{ user_data.first_name }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Last name:</label>
+                <span>{{ user_data.last_name }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Age Range:</label>
+                <span>{{ user_data.age_range }}</span>
+            </div>
+            <div class="profile-field">
+                <label>City:</label>
+                <span>{{ user_data.city }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Skills:</label>
+                <span>{{ user_data.skills }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Causes:</label>
+                <span>{{ user_data.cause }}</span>
+            </div>
+            <button class="edit-btn" onclick="location.href='/edit-profile'">Edit Profile</button>
+        </div>
+    </div>
+</body>
+<script src="/static/js//general/user.js"></script>
+
+</html>

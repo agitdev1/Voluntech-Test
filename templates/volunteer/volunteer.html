@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Dashboard</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+</head>
+<body>
+        <!-- Navigation bar -->
+        <nav class="navbar">
+            <!-- logo -->
+            <div class="navbar-logo">
+                <a href="/volunteer">
+                    <img src="/static/logo.png" alt="Voluntech"/>
+                </a>
+            </div>
+            <!-- menu items -->
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="/volunteer/">Volunteer</a>
+                    </li>
+                </ul>
+                <ul style="margin-left: auto;">
+                    <li>
+                        <a href="/volunteer/impact">Impact</a>
+                    </li>
+                    <li>
+                        <a href="/profile">Profile</a>
+                    </li>
+                    <li>
+                        <a href="/" id="logout" onclick="logout();">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <script>
+            async function deleteOpportunity(opportunityId) {
+                if (!confirm('Are you sure you want to delete this opportunity?')) return;
+    
+                try {
+                    const response = await fetch(`/delete-opportunity/${opportunityId}`, {
+                        method: 'POST'
+                    });
+                    const data = await response.json();
+                    if (response.ok) {
+                        alert(data.message);
+                        window.location.reload(); // Reload the page to update the list
+                    } else {
+                        throw new Error(data.detail || 'Failed to delete the opportunity');
+                    }
+                } catch (error) {
+                    alert('Error: ' + error.message);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Volunteering Opportunities</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                        <th>Description</th>
+                        <th>Volunteer Limit</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Location</th>
+                        <th>Skills</th>
+                        <th>Cause</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for opportunity in opportunities %}
+                <tr>
+                    <td>{{ opportunity.name }}</td>
+                    <td>{{ opportunity.description }}</td>
+                    <td>{{ opportunity.limit }}</td>
+                    <td>{{ opportunity.start_date }}</td>
+                    <td>{{ opportunity.end_date }}</td>
+                    <td>{{ opportunity.location }}</td>
+                    <td>{{ opportunity.skills | join(', ') }}</td>
+                    <td>{{ opportunity.cause | join(', ') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</body>
+<script src="/static/js/general/user.js"></script>
+</html>

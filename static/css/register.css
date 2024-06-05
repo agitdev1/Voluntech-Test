@@ -1,0 +1,380 @@
+body {
+     font-family: 'Lato', sans-serif;
+     background-color: #f8f9fa;
+     margin: 0; /* Remove default browser margins */
+     padding: 0; /* Remove default browser padding */
+ }
+    
+
+ .container {
+     max-width: 350px;
+     margin: 50px auto;
+     background-color: #fff;
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     background-color: #fff;
+ }
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    color: #666;
+}
+
+ label {
+     display: block;
+     margin-bottom: 5px;
+ }
+
+ input[type="text"],
+ input[type="email"],
+ input[type="password"] {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 20px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+ }
+
+ button[type="submit"] {
+     width: 100%;
+     padding: 10px;
+     background-color: #007bff;
+     color: #fff;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     font-size: 16px;
+ }
+
+ button[type="submit"]:hover {
+     background-color: #0056b3;
+ }
+
+ #age {
+     width: calc(102% - 10px);
+     padding: 12px;
+     margin-bottom: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     outline: none;
+     font-size: 15px;
+     transition: border-color 0.3s ease;
+     cursor: pointer;
+     
+     
+ }
+
+ /* CSS for Gender dropdown */
+ #gender {
+     width: calc(105% - 22px); /* Adjust width to fit within container */
+     padding: 10px;
+     margin-bottom: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     outline: none;
+     font-size: 15px;
+     cursor: pointer;
+ }
+@media (max-width: 480px) {
+ .container {
+     padding: 20px;
+ }
+}
+
+/* SKILLS MODAL CSS */
+ #skills {
+ cursor: pointer; /* Change cursor to pointer */
+ background-color: #fff; /* Set initial background color */
+ transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+ }
+
+/* size of labels inside the modal*/
+label {
+    font-size: 15px;
+    margin-bottom: 5px;
+   }
+#skills:hover {
+ background-color: #e6f2ff; /* Light blue hover background color */
+}
+
+#skills:focus {
+ outline: none; 
+ box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); 
+}
+
+.modal {
+ display: none;
+ position: fixed;
+ z-index: 1000;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ overflow: auto;
+ background-color: rgba(0, 0, 0, 0.4);
+ justify-content: center;
+ align-items: center;
+} 
+
+.modal-content {
+ background-color: #fff;
+ padding: 30px;
+ border-radius: 8px;
+ width: 50%; 
+ max-width: 800px; 
+ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+ animation: modalSlideIn 0.3s ease-out;
+}
+.modal-content p {
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+.close {
+ color: #aaa;
+ font-size: 24px;
+ font-weight: bold;
+ align-self: flex-end;
+ cursor: pointer;
+ transition: color 0.3s ease;
+}
+
+.close:hover {
+ color: #666;
+}
+
+.modal-content h2 {
+ text-align: center;
+ margin-bottom: 20px;
+ color: #444;
+
+}
+
+#skillOptions {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ gap: 10px;
+ margin-bottom: 20px;
+}
+
+#skillOptions label {
+ display: flex;
+ align-items: center;
+ padding: 10px;
+ border-radius: 4px;
+ background-color: #f8f8f8;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+}
+
+#skillOptions label:hover {
+ background-color: #eee;
+}
+
+#skillOptions input[type="checkbox"] {
+ margin-right: 10px;
+}
+
+#saveSkills {
+ width: 100%;
+ padding: 14px;
+ background-color: #0056b3;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 16px;
+ transition: background-color 0.3s ease;
+}
+
+#saveSkills:hover {
+ background-color: #003e80;
+}
+
+/* Modal Animation */
+@keyframes modalSlideIn {
+ 0% {
+     transform: translateY(-50px);
+     opacity: 0;
+ }
+ 100% {
+     transform: translateY(0);
+     opacity: 1;
+ }
+}
+
+/* CAUSES MODAL */
+.causes-modal {
+ display: none;
+ position: fixed;
+ z-index: 1000;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ overflow: auto;
+ background-color: rgba(0, 0, 0, 0.4);
+ justify-content: center;
+ align-items: center;
+}
+
+.causes-modal-content {
+ background-color: #fff;
+ padding: 30px;
+ border-radius: 8px;
+ width: 90%;
+ max-width: 500px;
+ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+ animation: modalSlideIn 0.3s ease-out;
+}
+
+.causes-modal .close {
+ color: #aaa;
+ font-size: 24px;
+ font-weight: bold;
+ align-self: flex-end;
+ cursor: pointer;
+ transition: color 0.3s ease;
+}
+
+.causes-modal .close:hover {
+ color: #666;
+}
+
+.causes-modal-content h2 {
+ text-align: center;
+ margin-top: 0;
+ margin-bottom: 20px;
+ color: #444;
+ font-weight: 500;
+}
+
+#causeOptions {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ gap: 10px;
+ margin-bottom: 20px;
+
+}
+
+#causeOptions label {
+ display: flex;
+ align-items: center;
+ padding: 10px;
+ border-radius: 4px;
+ background-color: #f8f8f8;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+}
+
+#causeOptions label:hover {
+ background-color: #eee;
+}
+
+#cause {
+ cursor: pointer; /* Change cursor to pointer */
+ background-color: #fff; /* Set initial background color */
+ transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+ }
+
+#cause:hover {
+ background-color: #e6f2ff; /* Light blue hover background color */
+}
+
+#cause:focus {
+ outline: none; 
+ box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); 
+}
+
+#causeOptions input[type="checkbox"] {
+ margin-right: 10px;
+}
+
+#saveCauses {
+ width: 100%;
+ padding: 14px;
+ background-color: #0056b3;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 16px;
+ transition: background-color 0.3s ease;
+}
+
+#saveCauses:hover {
+ background-color: #003e80;
+}
+
+/* Modal Animation */
+@keyframes modalSlideIn {
+ 0% {
+     transform: translateY(-50px);
+     opacity: 0;
+ }
+ 100% {
+     transform: translateY(0);
+     opacity: 1;
+ }
+}
+
+h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+#organizationtype {
+    width: calc(105% - 22px); /* Adjust width to fit within container */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+.navbar {
+    width: 100%;
+    background-color: #232323;
+    color: #cdcdcd;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:none;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #cdcdcd;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00C6A7;
+}
+.navbar-logo {
+    flex: 1; /* Distribute remaining space equally */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.navbar-logo img {
+    max-height: 100px; 
+    max-width:150px; 
+    flex-shrink: 0;
+}
+

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+    <title>Organization Registration</title>
+    <link rel="stylesheet" href="/static/css/register.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+<div class="navbar">
+    <!-- logo -->
+    <div class="navbar-logo">
+        <a href="/" class="navbar-logo">
+            <img src="/static/logo.png" alt="Voluntech">
+        </a>
+    </div>
+</div>
+        <div class="container">
+            <h1>Organization Registration</h1>
+            <form id="organizationForm" method="post">
+                <div>
+                    <input type="text" id="name" name="name" required placeholder="Organization Name">
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" required placeholder="Email">
+                </div>
+                <div>
+                    <input type="password" autocomplete="off" id="password" name="password" required placeholder="Password">
+                    <input id="peek" type="checkbox" onclick="Showpass()">Show Password
+                </div>
+                <br>
+                <div>
+                    <input type="text" id="city" name="city" required placeholder="City">
+                </div>
+                <div>
+                    <input type="text" id="skills" name="priorities" required readonly placeholder ="Priorities">                </div>
+                <div>
+                    <input type="text" id="cause" name="cause" required placeholder="Causes" readonly>
+                </div>
+                <div class="dropdown">
+                    <select id="organizationtype" name="orgtype" required>
+                        <option value="" disabled selected>Organization Type</option>
+                        <option value="Nonprofit">Nonprofit</option>
+                        <option value="Social Enterprise">Social Enterprise</option>
+                        <option value="Not yet formed">Not yet formed</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SKILLS MODAL -->
+    <div id="skillsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your priorities </h2>
+            <p>Choose up to 3 areas where your organization needs operational support</p>
+            <table id="skillOptions">
+                <tr>
+                    <td><label><input type="checkbox" value="Executive Leadership"> Executive Leadership</label></td>
+                    <td><label><input type="checkbox" value="Finance & operations"> Finance & operations</label></td>
+                    <td><label><input type="checkbox" value="Fundraising"> Fundraising</label></td>
+                    </tr>
+                    <tr> 
+                    <td><label><input type="checkbox" value="Human Resources">Human Resources</label></td>
+                    <td><label><input type="checkbox" value="Marketing & communications">Marketing & communications</label></td>
+                    <td><label><input type="checkbox" value="Professional development">Professional development</label></td>
+                    </tr>
+                    <td><label><input type="checkbox" value="Program management">Program management</label></td>
+                    <td><label><input type="checkbox" value="Technology"> Technology</label></td>
+                    <td><label><input type="checkbox" value="I'm not sure yet"> I'm not sure yet</label></td>
+                </tr>
+            </table>
+            <button id="saveSkills">Save</button>
+        </div>
+    </div>
+    <!-- CAUSE MODAL -->
+    <div id="causesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Choose Causes</h2>
+            <p>Select Your Organization's Top 3 Focus Areas </p>
+            <table id="causeOptions">
+                <tr>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Animals"> Animals</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Community & economic development"> Community & Economic Development</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Diversity & inclusion"> Diversity & Inclusion</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Environment"> Environment</label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Housing & homelessness"> Housing & Homelessness</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Justice & legal services"> Justice & Legal Services</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Military & veterans affairs"> Military & Veterans Affairs</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Science & technology"> Science & Technology</label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Arts & culture"> Arts & Culture</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Disaster relief"> Disaster Relief</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Education"> Education</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Gender equity & justice"> Gender Equity & Justice</label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Human services"> Human Services</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="LGBTQ+"> LGBTQ+</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Philanthropy & capacity building"> Philanthropy & Capacity Building</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Violence prevention"> Violence Prevention</label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Civil rights"> Civil Rights</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Disease & medical research"> Disease & Medical Research</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Employment services"> Employment Services</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Health & nutrition"> Health & Nutrition</label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="International affairs"> International Affairs</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Maternal health"> Maternal Health</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Religion & spirituality"> Religion & Spirituality</label></td>
+                    <td><label><input type="checkbox" class="causeCheckbox" value="Youth development"> Youth Development</label></td>
+                </tr>
+            </table>
+            <button id="saveCauses">Save</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // SKILLS MODAL
+            const skillModal = document.getElementById("skillsModal");
+            const skillsInput = document.getElementById("skills");
+            const skillOpenBtn = document.getElementById("openSkillModal");
+            const skillCloseBtn = document.querySelector("#skillsModal .close");
+        
+            // Open skills modal when skills input is clicked
+            skillsInput.addEventListener("click", function() {
+                skillModal.style.display = "flex";
+            });
+        
+            // Close skills modal when close button is clicked
+            skillCloseBtn.addEventListener("click", function() {
+                skillModal.style.display = "none";
+            });
+        
+            // Close modals when clicked outside the modal content
+            window.addEventListener("click", function(event) {
+                if (event.target == skillModal) {
+                    skillModal.style.display = "none";
+                }
+            });
+        
+            // Add a class to all skill checkboxes
+            const skillCheckboxes = document.querySelectorAll("#skillOptions input[type=checkbox]");
+            // Add an event listener to each checkbox
+            skillCheckboxes.forEach(function(checkbox) {
+                checkbox.addEventListener("click", function(event) {
+                    // Count the number of checked checkboxes
+                    const numChecked = document.querySelectorAll("#skillOptions input[type=checkbox]:checked").length;
+                    // If the limit is reached, prevent the checkbox from being checked
+                    if (numChecked > 3) {
+                        event.preventDefault();
+                        alert("You can only select 3 priorities.");
+                    }
+                });
+            });
+
+            // SKILLS MODAL
+            const saveSkillsBtn = document.getElementById("saveSkills");
+            saveSkillsBtn.addEventListener("click", function() {
+                const selectedSkills = Array.from(document.querySelectorAll("#skillOptions input[type=checkbox]:checked")).map(function(checkbox) {
+                    return checkbox.value;
+                });
+
+                if (selectedSkills.length > 3) {
+                    alert("You can only select 3 skills.");
+                    return;
+                }
+
+                skillsInput.value = selectedSkills.join(", ");
+                skillModal.style.display = "none";
+            });
+
+            // CAUSES MODAL
+            const causesModal = document.getElementById("causesModal");
+            const causeInput = document.getElementById("cause");
+            const causeOpenBtn = document.getElementById("openCauseModal");
+            const causeCloseBtn = document.querySelector("#causesModal .close");
+        
+            // Open causes modal when causes input is clicked
+            causeInput.addEventListener("click", function() {
+                causesModal.style.display = "flex";
+            });
+        
+            // Close causes modal when close button is clicked
+            causeCloseBtn.addEventListener("click", function() {
+                causesModal.style.display = "none";
+            });
+        
+            // Close modals when clicked outside the modal content
+            window.addEventListener("click", function(event) {
+                if (event.target == causesModal) {
+                    causesModal.style.display = "none";
+                }
+            });
+        
+            // Add a class to all cause checkboxes
+            const causeCheckboxes = document.querySelectorAll(".causeCheckbox");
+            // Add an event listener to each checkbox
+            causeCheckboxes.forEach(function(checkbox) {
+                checkbox.addEventListener("click", function(event) {
+                    // Count the number of checked checkboxes
+                    const numChecked = document.querySelectorAll(".causeCheckbox:checked").length;
+                    // If the limit is reached, prevent the checkbox from being checked
+                    if (numChecked > 3) {
+                        event.preventDefault();
+                        alert("You can only select 3 causes.");
+                    }
+                });
+            });
+
+            // CAUSES MODAL
+            const saveCausesBtn = document.getElementById("saveCauses");
+            saveCausesBtn.addEventListener("click", function() {
+                const selectedCauses = Array.from(document.querySelectorAll("#causeOptions input[type=checkbox]:checked")).map(function(checkbox) {
+                    return checkbox.value;
+                });
+                causeInput.value = selectedCauses.join(", ");
+                causesModal.style.display = "none";
+            });
+
+            // Show Password checkbox
+            const showPasswordCheckbox = document.getElementById("peek");
+            const passwordInput = document.getElementById("password");
+
+            showPasswordCheckbox.addEventListener("change", function() {
+                if (this.checked) {
+                    passwordInput.type = "text";
+                } else {
+                    passwordInput.type = "password";
+                }
+            });
+
+            // Form submission
+            const form = document.getElementById("organizationForm");
+        
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault();
+
+                // Validate form fields before submission
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value;
+                const city = document.getElementById("city").value.trim();
+                const skills = document.getElementById("skills").value;
+                const cause = document.getElementById("cause").value;
+                const orgTypeSelect = document.getElementById("organizationtype");
+                const orgType = orgTypeSelect.options[orgTypeSelect.selectedIndex].value;
+
+                // Check if all required fields are filled
+                if (!name || !email || !password || !city || !skills || !cause || !orgType) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+
+                // Additional validation can be added here (e.g., email format, password length)
+
+                // Proceed with form submission if validation passes
+                const formData = new FormData(form);
+
+                try {
+                    const response = await fetch("/register/organization", {
+                        method: "POST",
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Failed to submit form");
+                    }
+                    // Prompt the user that registration was successful
+                    alert("Registered successfully.");
+                    // Redirect to /organization after successful registration
+                    window.location.href = "/organization";
+                } catch (error) {
+                    console.error("Error:", error.message);
+                    alert("An error occurred while registering. Please try again later.");
+                }
+            });
+        });
+    </script>
+        
+</body>
+</html>
+

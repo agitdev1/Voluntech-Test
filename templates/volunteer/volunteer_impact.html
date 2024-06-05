@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Impact</title>
+    <link rel="stylesheet" href="/static/css/impact.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <!-- logo -->
+    <div class="navbar-logo">
+        <a href="/volunteer">
+            <img src="/static/logo.png" alt="Voluntech"/>
+        </a>
+    </div>
+    <!-- menu items -->
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="/volunteer/">Volunteer</a>
+            </li>
+        </ul>
+        <ul style="margin-left: auto;">
+            <li>
+                <a href="/volunteer/impact">Impact</a>
+            </li>
+            <li>
+                <a href="/profile">Profile</a>
+            </li>
+            <li>
+                <a href="/" id="logout" onclick="logout();">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <div class="impact-container">
+        <h1>Welcome, {{ volunteer_name }}!</h1>
+        <h2>Your Impact</h2>
+        <div class="impact-stat">
+            <h3>Your Volunteer Hours</h3>
+            <p>{{ volunteer_hours }}</p>
+        </div>
+        <div class="impact-stat">
+            <h3>Your Projects Completed</h3>
+            <p>{{ volunteer_projects_completed }}</p>
+        </div>
+        <h2>Overall Impact</h2>
+        <div class="impact-stat">
+            <h3>Total Volunteer Hours</h3>
+            <p>{{ total_hours }}</p>
+        </div>
+        <div class="impact-stat">
+            <h3>Projects Completed</h3>
+            <p>{{ projects_completed }}</p>
+        </div>
+        <div class="impact-stat">
+            <h3>Community Benefits</h3>
+            <p>{{ community_benefits }}</p>
+        </div>
+        <div class="upcoming-opportunities">
+            <h2>Upcoming Opportunities</h2>
+            <ul>
+                <!-- List upcoming opportunities -->
+                <li><a href="/opportunity/1">Clean the Park</a></li>
+                <li><a href="/opportunity/2">Teach Coding</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
