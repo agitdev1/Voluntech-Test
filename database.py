@@ -1,7 +1,7 @@
 # MongoDB connection
 from pymongo import MongoClient
 
-client = MongoClient("mongodb+srv://Agather:avocado2001@cl-iptl.i2vsn1h.mongodb.net/?retryWrites=true&w=majority&appName=cl-iptl")
+client = MongoClient("")
 db = client.db_voluntech
 volunteer_collection = db.volunteer
 organization_collection = db.organization
