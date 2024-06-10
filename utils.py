@@ -201,7 +201,7 @@ def send_email(email: str, link: str, subject: str):
 
     with smtplib.SMTP('smtp.mailtrap.io', 587) as smtp:
         smtp.starttls()
-        smtp.login('8b1664259ee283', 'd7d62ef83bad7c')
+        smtp.login('username', 'password')
         smtp.send_message(msg)
 
 # Verify and update the user's password
