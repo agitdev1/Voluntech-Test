@@ -4,3 +4,5 @@ pytz
 bcrypt
 pymongo
 email-validator
+passlib
+bson
